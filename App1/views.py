@@ -99,3 +99,9 @@ def reserva_detail(request, pk):
     elif request.method == 'DELETE':
         reserva.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+@api_view(['GET'])
+def mesa_list(request):
+    mesas = Mesa.objects.all().order_by('numero')
+    serializer = MesaSerializer(mesas, many=True)
+    return Response(serializer.data)

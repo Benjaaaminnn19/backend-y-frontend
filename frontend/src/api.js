@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8000"; // Tu servidor Django
+const API_URL = "http://localhost:8000"; 
 
 export async function getReservas() {
   const res = await fetch(`${API_URL}/api/reservas/`);
