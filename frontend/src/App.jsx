@@ -278,8 +278,6 @@ function App() {
             </div>
           </form>
         </div>
-
-        {/* LISTA DE RESERVAS */}
         <div className="lista-container">
           <h2> Lista de Reservas ({reservas.length})</h2>
           

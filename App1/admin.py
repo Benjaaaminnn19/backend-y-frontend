@@ -5,7 +5,6 @@ from .models import Reserva, Mesa
 
 @admin.register(Mesa)
 class MesaAdmin(admin.ModelAdmin):
-    """Configuración del admin para el modelo Mesa"""
     list_display = ('numero', 'capacidad')
     list_filter = ('capacidad',)
     search_fields = ('numero',)
@@ -14,7 +13,6 @@ class MesaAdmin(admin.ModelAdmin):
 
 @admin.register(Reserva)
 class ReservaAdmin(admin.ModelAdmin):
-    """Configuración del admin para el modelo Reserva"""
     list_display = (
         'id', 'nombre', 'telefono', 'fecha', 'hora',
         'numero_personas', 'estado', 'mesa', 'observacion'
@@ -36,9 +34,6 @@ class ReservaAdmin(admin.ModelAdmin):
             'classes': ('collapse',)
         }),
     )
-
-
-# Configurar el título del sitio admin en español
 admin.site.site_header = _("Administración de Reservas")
 admin.site.site_title = _("Sitio de Administración")
 admin.site.index_title = _("Panel de Control")

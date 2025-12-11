@@ -4,7 +4,6 @@ from django.utils.translation import gettext_lazy as _
 
 
 class Mesa(models.Model):
-    """Modelo para representar una mesa del restaurante"""
     numero = models.IntegerField(unique=True, verbose_name=_("Número de Mesa"))
     capacidad = models.IntegerField(
         validators=[MinValueValidator(1), MaxValueValidator(15)],
@@ -21,8 +20,6 @@ class Mesa(models.Model):
 
 
 class Reserva(models.Model):
-    """Modelo para representar una reserva de mesa"""
-    
     class EstadoReserva(models.TextChoices):
         RESERVADO = 'RESERVADO', _('Reservado')
         COMPLETADA = 'COMPLETADA', _('Completada')
